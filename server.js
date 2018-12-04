@@ -105,9 +105,8 @@ app.post('/recipes', jsonParser, (req, res) => {
   res.status(201).json(item);
 });
 
-app.post('/recipes/:id', jsonParser, (req, res) => {
+app.put('/recipes/:id', jsonParser, (req, res) => {
   // ensure `name` and `budget` are in request body
-  console.log(`made it this far`);
   const requiredFields = ['name', 'ingredients'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
